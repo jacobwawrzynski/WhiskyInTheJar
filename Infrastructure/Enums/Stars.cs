@@ -2,6 +2,6 @@
 {
     public enum Stars
     {   // Consider change
-        Undefinied, One, Two, Three, Four, Five
+        None, One, Two, Three, Four, Five
     }
 }

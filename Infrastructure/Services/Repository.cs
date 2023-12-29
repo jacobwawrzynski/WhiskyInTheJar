@@ -31,7 +31,7 @@ namespace Infrastructure.Services
             return _entities.Where(condition).ToList();
         }
 
-        public T GetById(int id)
+        public T? GetById(int id)
         {
             return _entities.SingleOrDefault(e => e.Id == id);
         }

@@ -14,7 +14,9 @@ namespace Infrastructure.Entities
         [MaxLength(250)]
         public string? Comment { get; set; }
 
-        public Stars Stars { get; set; } = Stars.Undefinied;
+        public Stars Stars { get; set; } = Stars.None;
+
+        public DateTime DateAdded { get; set; } = DateTime.Now;
 
         public Guid? PhotoId { get; set; } // Assign default photo with guid 00...
     }
