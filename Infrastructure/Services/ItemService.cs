@@ -1,4 +1,5 @@
-﻿using Infrastructure.Entities;
+﻿using Infrastructure.DataContext;
+using Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,42 +9,15 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public class ItemService : IItemService
+    public class ItemService : Repository<Item>, IItemService
     {
-        private readonly IRepository<Item> _itemRepo;
-        public ItemService(IRepository<Item> itemRepo)
+        public ItemService(ApplicationDbContext context) : base(context)
         {
-            _itemRepo = itemRepo;
         }
 
-        public Item? GetItem(int id) 
+        public IEnumerable<Item> SortByStarsDesc()
         {
-            return _itemRepo.GetById(id);
-        }
-
-        public IEnumerable<Item> GetAllItems()
-        {
-            return _itemRepo.GetAll();
-        }
-
-        public void Create(Item item)
-        {
-            _itemRepo.Create(item);
-        }
-
-        public void Update(Item item)
-        {
-            _itemRepo.Update(item);
-        }
-
-        public void Delete(Item item)
-        {
-            _itemRepo.Delete(item);
-        }
-
-        public bool Save()
-        {
-            return _itemRepo.Save();
+            return GetAll().OrderByDescending(item => item.Stars);
         }
     }
 }

@@ -3,19 +3,12 @@ using System.Linq.Expressions;
 
 namespace Infrastructure.Services
 {
-    public interface IItemService
+    public interface IItemService : IRepository<Item>
     {
-        IEnumerable<Item> GetAllItems();
-        
-        // Get with X start (Stars prop)
+        IEnumerable<Item> SortByStarsDesc();
+
         // Get latest/sorting (DateAdded prop)
         // Search by name
         // Search by price
-
-        void Create(Item item);
-        void Update(Item item);
-        void Delete(Item item);
-        Item? GetItem(int id);
-        bool Save();
     }
 }
