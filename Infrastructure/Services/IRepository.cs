@@ -12,6 +12,7 @@ namespace Infrastructure.Services
         void Create(T entity);
         void Update(T entity);
         void Delete(T entity);
-        bool Save();
+        //bool Save();
+        // Saving in UnitOfWork
     }
 }
