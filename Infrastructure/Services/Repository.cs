@@ -51,19 +51,19 @@ namespace Infrastructure.Services
             _entities.Update(entity);
         }
 
-        //public bool Save()
-        //{
-        //    // Add Logging errors to a database
-        //    try
-        //    {
-        //        _context.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (DbUpdateException)
-        //    {
-        //        return false;
-        //    }
-        //}
+        public bool Save()
+        {
+            // add logging errors to a database
+            try
+            {
+                _context.SaveChanges();
+                return true;
+            }
+            catch (DbUpdateException)
+            {
+                return false;
+            }
+        }
 
         private bool _disposed = false;
         public virtual void Dispose(bool disposing)

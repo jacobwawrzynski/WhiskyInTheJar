@@ -12,6 +12,9 @@ namespace Infrastructure.Services
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
+        // Unit of work is usable when more than one repository
+        // needs to be used
+
         private readonly ApplicationDbContext _context;
         public UnitOfWork(ApplicationDbContext context)
         {
