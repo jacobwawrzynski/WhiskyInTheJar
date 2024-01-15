@@ -3,9 +3,9 @@ using System.Linq.Expressions;
 
 namespace Infrastructure.Services
 {
-    public interface IItemService : IRepository<Item>
+    public interface IWhiskyService : IRepository<Whisky>
     {
-        IEnumerable<Item> SortByStarsDesc();
+        IEnumerable<Whisky> SortByStarsDesc();
 
         // Get latest/sorting (DateAdded prop)
         // Search by name

@@ -1,19 +1,13 @@
 ﻿using Infrastructure.DataContext;
 using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Infrastructure.Services
+namespace Infrastructure.Services.UnitOfWorkPattern
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        // Unit of work is usable when more than one repository
-        // needs to be used
+        // Use when more than one repository needs to be used 
+        // in controller
 
         private readonly ApplicationDbContext _context;
         public UnitOfWork(ApplicationDbContext context)

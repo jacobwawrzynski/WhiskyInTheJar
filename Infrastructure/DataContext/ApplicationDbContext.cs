@@ -13,7 +13,7 @@ namespace Infrastructure.DataContext
         {
         }
 
-        public DbSet<Item> Items { get; set; }
+        public DbSet<Whisky> Whiskies { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

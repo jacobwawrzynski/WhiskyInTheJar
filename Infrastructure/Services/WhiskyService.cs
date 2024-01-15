@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public class ItemService : Repository<Item>, IItemService
+    public class WhiskyService : Repository<Whisky>, IWhiskyService
     {
-        public ItemService(ApplicationDbContext context) : base(context)
+        public WhiskyService(ApplicationDbContext context) : base(context)
         {
         }
 
-        public IEnumerable<Item> SortByStarsDesc()
+        public IEnumerable<Whisky> SortByStarsDesc()
         {
             return GetAll().OrderByDescending(item => item.Stars);
         }

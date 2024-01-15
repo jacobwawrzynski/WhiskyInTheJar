@@ -14,7 +14,9 @@ namespace Infrastructure.MappingProfiles
     {
         public AutoMappingProfile()
         {
-            CreateMap<ItemDTO, Item>();   
+            CreateMap<WhiskyDTO, Whisky>()
+                .IncludeBase<WhiskyDTO, BaseEntity>();
+            CreateMap<Whisky, WhiskyDTO>();
         }
     }
 }

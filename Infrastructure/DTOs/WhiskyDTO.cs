@@ -8,13 +8,10 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.DTOs
 {
-    public class ItemDTO
+    public class WhiskyDTO
     {
         public string Name { get; set; }
-        public string? Description { get; set; }
-        public string? Comment { get; set; }
+        public string Description { get; set; }
         public Stars Stars { get; set; }
-        public DateTime DateAdded { get; set; }
-        public Guid? PhotoId { get; set; }
     }
 }

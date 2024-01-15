@@ -1,4 +1,5 @@
 using Infrastructure.DataContext;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options => 
         options.UseSqlite("Data Source=../Data.db")
     );
+
+builder.Services.AddSingleton(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IWhiskyService, WhiskyService>();
 
 var app = builder.Build();
 
