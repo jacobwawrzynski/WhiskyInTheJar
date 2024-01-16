@@ -8,7 +8,7 @@ namespace Infrastructure.Services
         IEnumerable<T> GetAll();
         // IEnumerable instead of IQueryable due to SQLite local file
         IEnumerable<T> GetByCondition(Expression<Func<T, bool>> condition);
-        T? GetById(int id);
+        T? GetById(Guid id);
         void Create(T entity);
         void Update(T entity);
         void Delete(T entity);

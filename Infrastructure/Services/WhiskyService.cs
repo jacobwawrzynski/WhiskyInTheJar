@@ -17,7 +17,7 @@ namespace Infrastructure.Services
 
         public IEnumerable<Whisky> SortByStarsDesc()
         {
-            return GetAll().OrderByDescending(item => item.Stars);
+            return GetAll().OrderByDescending(whisky => whisky.Stars);
         }
     }
 }

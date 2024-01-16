@@ -21,14 +21,14 @@ namespace Management.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int? id)
+        public IActionResult Get(Guid? id)
         {
             if (id is null)
             {
                 return BadRequest(ModelState);
             }
 
-            var item = _whiskyService.GetById((int)id);
+            var item = _whiskyService.GetById((Guid)id);
             return Ok(item);
         }
 
@@ -54,14 +54,14 @@ namespace Management.API.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Edit(int? id, WhiskyDTO whiskyDTO)
+        public IActionResult Edit(Guid? id, WhiskyDTO whiskyDTO)
         {
             if (id is null)
             {
                 return BadRequest("id is null");
             }
 
-            var whisky = _whiskyService.GetById((int) id);
+            var whisky = _whiskyService.GetById((Guid) id);
 
             if (whisky is null)
             {
@@ -80,14 +80,14 @@ namespace Management.API.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Delete(int? id)
+        public IActionResult Delete(Guid? id)
         {
             if (id is null)
             {
                 return BadRequest("id is null");
             }
 
-            var whisky = _whiskyService.GetById((int)id); 
+            var whisky = _whiskyService.GetById((Guid)id); 
 
             if (whisky is null)
             {

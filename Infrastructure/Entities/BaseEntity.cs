@@ -5,7 +5,7 @@ namespace Infrastructure.Entities
     public class BaseEntity
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Length(1, 25)]
         public string Name { get; set; }
