@@ -9,12 +9,12 @@ namespace Management.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ItemController : ControllerBase
+    public class WhiskyController : ControllerBase
     {
         private IWhiskyService _whiskyService;
         private IMapper _mapper;
 
-        public ItemController(IWhiskyService whiskyService, IMapper mapper)
+        public WhiskyController(IWhiskyService whiskyService, IMapper mapper)
         {
             _whiskyService = whiskyService;
             _mapper = mapper;
