@@ -17,7 +17,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     );
 
 builder.Services.AddSingleton(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped<IWhiskyService, WhiskyService>();
 builder.Services.AddAutoMapper(typeof(AutoMappingProfile));
 
 var app = builder.Build();

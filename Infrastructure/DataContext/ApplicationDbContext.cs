@@ -13,8 +13,6 @@ namespace Infrastructure.DataContext
         {
         }
 
-        public DbSet<Whisky> Whiskies { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
