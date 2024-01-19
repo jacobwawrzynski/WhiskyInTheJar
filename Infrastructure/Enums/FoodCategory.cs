@@ -8,7 +8,7 @@ namespace Infrastructure.Enums
 {
     public enum FoodCategory
     {
-        Others = 0,
+        Others,
         Vegetables,
         Fruits,
         Grains,

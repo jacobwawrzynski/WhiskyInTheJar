@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,8 @@ namespace Infrastructure.Entities
 {
     public class NutritionFacts
     {
-        // Provide grams to ounces func in API
+        [Key]
+        public Guid Id { get; set; }
         public int Kcal { get; set; }
         public double Protein { get; set; }
         public double Fat { get; set; }
@@ -18,5 +20,9 @@ namespace Infrastructure.Entities
         public double Carbohydrates { get; set; }
         public double? Sugars { get; set; }
         public double? Fiber { get; set; }
+
+        // Relationship
+        public Guid ItemId { get; set; }
+        public Item Item { get; set; } = null!;
     }
 }
