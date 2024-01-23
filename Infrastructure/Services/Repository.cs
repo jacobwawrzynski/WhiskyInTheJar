@@ -51,10 +51,8 @@ namespace Infrastructure.Services
             _entities.Update(entity);
         }
 
-        // Saving can be commited also in UnitOfWork
         public bool Save()
         {
-            // add logging errors to a database
             try
             {
                 _context.SaveChanges();

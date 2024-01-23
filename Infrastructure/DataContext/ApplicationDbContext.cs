@@ -13,8 +13,10 @@ namespace Infrastructure.DataContext
         {
         }
 
-        public DbSet<Item> Items { get; set; }
+        public DbSet<Product> Items { get; set; }
         public DbSet<NutritionFacts> NutritionFacts { get; set; }
+        public DbSet<Whisky> Whiskies { get; set; }
+        public DbSet<Meal> Meals { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,9 +29,10 @@ namespace Infrastructure.DataContext
             base.OnModelCreating(model);
 
             model.Entity<NutritionFacts>()
-                .HasOne(nf => nf.Item)
+                .HasOne(nf => nf.Product)
                 .WithOne(i => i.NutritionFacts)
-                .HasForeignKey<NutritionFacts>(nf => nf.ItemId)
+                .HasForeignKey<NutritionFacts>(nf => nf.ProductId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
         }
     }

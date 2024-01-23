@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Entities
 {
-    public class Item : BaseEntity
+    public class Product : BaseEntity
     {
         [Column(TypeName = "varchar(20)")]
         public FoodCategory FoodCategory { get; set; } = FoodCategory.Others;
 
-        [Column(TypeName = "varchar(9)")]
-        public OverallRating OverallRating { get; set; } = OverallRating.Good;
+        [Column(TypeName = "varchar(7)")]
+        public HealthRating HealthRating { get; set; } = HealthRating.Good;
 
         // Ralationship
         public NutritionFacts NutritionFacts { get; set; } = null!;

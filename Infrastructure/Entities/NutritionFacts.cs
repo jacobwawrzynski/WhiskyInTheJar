@@ -22,7 +22,7 @@ namespace Infrastructure.Entities
         public double? Fiber { get; set; }
 
         // Relationship
-        public Guid ItemId { get; set; }
-        public Item Item { get; set; } = null!;
+        public Guid ProductId { get; set; }
+        public Product Product { get; set; } = null!;
     }
 }

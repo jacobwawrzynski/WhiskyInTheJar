@@ -16,7 +16,5 @@ namespace Infrastructure.Entities
         public string Description { get; set; }
 
         public DateTime DateAdded { get; set; } = DateTime.Now;
-
-        //public Guid? PhotoId { get; set; } // Assign default photo with guid 00...
     }
 }

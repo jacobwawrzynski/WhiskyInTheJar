@@ -14,7 +14,8 @@ namespace Infrastructure.MappingProfiles
     {
         public AutoMappingProfile()
         {
-                
+            CreateMap<WhiskyDTO, Whisky>()
+                .ReverseMap();
         }
     }
 }
