@@ -3,6 +3,7 @@ using System;
 using Infrastructure.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240123181406_whisky_v1")]
+    partial class whisky_v1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -23,17 +26,15 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Category")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("DateAdded")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("HealthRating")
-                        .IsRequired()
-                        .HasMaxLength(7)
-                        .HasColumnType("varchar(7)");
 
                     b.Property<string>("Ingredients")
                         .IsRequired()
@@ -45,11 +46,6 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("Preparing")
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("Rating")
-                        .IsRequired()
-                        .HasMaxLength(9)
-                        .HasColumnType("varchar(9)");
 
                     b.HasKey("Id");
 
@@ -113,14 +109,10 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FoodCategory")
-                        .IsRequired()
-                        .HasMaxLength(20)
+                    b.Property<int>("FoodCategory")
                         .HasColumnType("varchar(20)");
 
-                    b.Property<string>("HealthRating")
-                        .IsRequired()
-                        .HasMaxLength(7)
+                    b.Property<int>("HealthRating")
                         .HasColumnType("varchar(7)");
 
                     b.Property<string>("Name")
@@ -155,9 +147,7 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Rating")
-                        .IsRequired()
-                        .HasMaxLength(9)
+                    b.Property<int>("Rating")
                         .HasColumnType("varchar(9)");
 
                     b.HasKey("Id");
