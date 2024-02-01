@@ -16,10 +16,6 @@ namespace Infrastructure.Entities
 
         [Required]
         [Column(TypeName = "decimal(10, 2)")]
-        public double LowestPrice { get; set; }
-
-        [Required]
-        [Column(TypeName = "decimal(10, 2)")]
-        public double HighestPrice { get;set; }
+        public double AveragePrice { get; set; }
     }
 }

@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Entities
+namespace Infrastructure.DTOs
 {
-    public class NutritionFacts : BaseEntity
+    public class NutritionFactsDTO
     {
+        public Guid Id { get; set; }
+        public string? Name { get; set; } = null;
+        public string? Description { get; set; } = null;
+        public DateTime DateAdded { get; set; }
         public int Kcal { get; set; }
         public double Protein { get; set; }
         public double Fat { get; set; }
@@ -18,9 +21,5 @@ namespace Infrastructure.Entities
         public double Carbohydrates { get; set; }
         public double? Sugars { get; set; }
         public double? Fiber { get; set; }
-
-        // Relationship
-        public Guid ProductId { get; set; }
-        public Product Product { get; set; } = null!;
     }
 }

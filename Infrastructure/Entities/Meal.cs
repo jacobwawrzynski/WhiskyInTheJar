@@ -11,8 +11,10 @@ namespace Infrastructure.Entities
 {
     public class Meal : BaseEntity
     {
+        //[Required]
+        //public IEnumerable<string> Ingredients { get; set; } = null!;
         [Required]
-        public IEnumerable<string> Ingredients { get; set; } = null!;
+        public string Ingredients { get; set; } = null!;
         public string? Preparing { get; set; }
 
         [Column(TypeName = "varchar(7)")]

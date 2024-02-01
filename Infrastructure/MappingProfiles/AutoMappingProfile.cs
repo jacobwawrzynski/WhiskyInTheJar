@@ -16,6 +16,12 @@ namespace Infrastructure.MappingProfiles
         {
             CreateMap<WhiskyDTO, Whisky>()
                 .ReverseMap();
+
+            CreateMap<ProductDTO, Product>()
+                .ReverseMap();
+
+            CreateMap<NutritionFactsDTO, NutritionFacts>()
+                .ReverseMap();
         }
     }
 }
