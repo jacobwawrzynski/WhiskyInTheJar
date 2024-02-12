@@ -15,6 +15,7 @@ namespace Infrastructure.DataContext
         }
 
         public DbSet<Product> Items { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<NutritionFacts> NutritionFacts { get; set; }
         public DbSet<Whisky> Whiskies { get; set; }
         public DbSet<Meal> Meals { get; set; }
