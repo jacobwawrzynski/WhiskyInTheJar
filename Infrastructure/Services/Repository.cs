@@ -26,9 +26,16 @@ namespace Infrastructure.Services
             return _entities.ToList();
         }
 
-        public IEnumerable<T> GetByCondition(Expression<Func<T, bool>> condition)
+        public IEnumerable<T> GetByCondition(Expression<Func<T, bool>> condition, 
+            Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null)
         {
-            return _entities.Where(condition).ToList();
+            IQueryable<T> query = _entities;
+
+            if (orderBy is not null)
+            {
+                query = orderBy(query);
+            }
+            return query.Where(condition).ToList();
         }
 
         public T? GetById(Guid id)

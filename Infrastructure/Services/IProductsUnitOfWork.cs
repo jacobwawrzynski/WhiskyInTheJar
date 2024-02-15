@@ -2,9 +2,9 @@
 
 namespace Infrastructure.Services
 {
-    public interface IProductsTransaction
+    public interface IProductsUnitOfWork
     {
-        void Commit();
+        Task Commit();
         void RollBack();
     }
 }
