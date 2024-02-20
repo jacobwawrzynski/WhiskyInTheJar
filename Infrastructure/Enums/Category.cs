@@ -8,7 +8,7 @@ namespace Infrastructure.Enums
 {
     public enum Category
     {
-        Unknown,
+        Other = 0,
         SingleMalt,
         BlendedMalt,
         BlendedWhiskey,
@@ -17,7 +17,6 @@ namespace Infrastructure.Enums
         SingleGrainScotchWhiskey,
         BlendedMaltScotchWhiskey,
         BlendedGrainScotchWhiskey,
-        Bourbon,
-
+        Bourbon
     }
 }

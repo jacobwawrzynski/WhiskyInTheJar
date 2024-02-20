@@ -14,11 +14,16 @@ namespace Infrastructure.Entities
         [Column(TypeName = "varchar(9)")]
         public OverallRating Rating { get; set; } = OverallRating.Average;
 
-        [Column(TypeName = "nvarchar(50)")]
-        public Category Category { get; set; } = Category.Unknown;
+        [Column(TypeName = "nvarchar(100)")]
+        public Category Category { get; set; } = Category.Other;
 
         [Required]
         [Column(TypeName = "decimal(10, 2)")]
         public double AveragePrice { get; set; }
+
+        [Required]
+        public string Country { get; set; }
+
+        public int? Age { get; set; }
     }
 }

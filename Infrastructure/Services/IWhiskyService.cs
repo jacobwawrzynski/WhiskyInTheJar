@@ -9,7 +9,7 @@ namespace Infrastructure.Services
 {
     public interface IWhiskyService : IRepository<Whisky>
     {
-        IEnumerable<Whisky> SortByStarsDesc();
+        IEnumerable<Whisky> SortByRatingDesc();
 
         // Get latest/sorting (DateAdded prop)
         // Search by name

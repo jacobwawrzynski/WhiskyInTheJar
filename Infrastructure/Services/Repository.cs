@@ -21,12 +21,12 @@ namespace Infrastructure.Services
             _entities = context.Set<T>();
         }
 
-        public IEnumerable<T> GetAll()
+        public IQueryable<T> GetAll()
         {
-            return _entities.ToList();
+            return _entities;
         }
 
-        public IEnumerable<T> GetByCondition(Expression<Func<T, bool>> condition, 
+        public IQueryable<T> GetByCondition(Expression<Func<T, bool>> condition, 
             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null)
         {
             IQueryable<T> query = _entities;
@@ -35,7 +35,7 @@ namespace Infrastructure.Services
             {
                 query = orderBy(query);
             }
-            return query.Where(condition).ToList();
+            return query.Where(condition);
         }
 
         public T? GetById(Guid id)
