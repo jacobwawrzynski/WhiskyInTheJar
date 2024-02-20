@@ -10,10 +10,10 @@ namespace Infrastructure.Entities
         public Guid Id { get; set; }
 
         [Length(1, 25)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         [Length(1, 250)]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         public DateTime DateAdded { get; set; } = DateTime.Now;
     }

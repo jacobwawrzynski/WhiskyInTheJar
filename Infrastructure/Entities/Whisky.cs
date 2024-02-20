@@ -14,6 +14,9 @@ namespace Infrastructure.Entities
         [Column(TypeName = "varchar(9)")]
         public OverallRating Rating { get; set; } = OverallRating.Average;
 
+        [Column(TypeName = "nvarchar(50)")]
+        public Category Category { get; set; } = Category.Unknown;
+
         [Required]
         [Column(TypeName = "decimal(10, 2)")]
         public double AveragePrice { get; set; }
