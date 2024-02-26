@@ -6,7 +6,6 @@ namespace Infrastructure.Services
     public interface IRepository<T> where T : BaseEntity
     {
         IQueryable<T> GetAll();
-
         IQueryable<T> GetByCondition(Expression<Func<T, bool>> condition, 
             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null);
         
