@@ -2,6 +2,7 @@ using Infrastructure.DataContext;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.MappingProfiles;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlite("Data Source=../Data.db")
     );
 
-builder.Services.AddSingleton(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddTransient<IWhiskyService, WhiskyService>();
 builder.Services.AddAutoMapper(typeof(AutoMappingProfile));
 
@@ -29,12 +30,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseMiddleware<HttpLoggingMiddleware>();
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<HttpLoggingMiddleware>();
 
 app.Run();

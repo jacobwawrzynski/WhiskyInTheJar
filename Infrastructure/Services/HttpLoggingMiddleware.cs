@@ -16,8 +16,8 @@ namespace Infrastructure.Services
             ILogger<HttpLoggingMiddleware> logger, 
             ApplicationDbContext dbContext)
         {
-            _dbContext = dbContext;
             _next = next;
+            _dbContext = dbContext;
             _logger = logger;
         }
 

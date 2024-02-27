@@ -15,7 +15,9 @@ namespace Infrastructure.DataContext
         }
 
         public DbSet<Whisky> Whiskies { get; set; }
-        
+        public DbSet<ResponseLog> ResponseLogs { get; set; }
+        public DbSet<RequestLog> RequestLogs { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
