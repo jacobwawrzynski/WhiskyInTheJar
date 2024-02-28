@@ -36,6 +36,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseMiddleware<HttpLoggingMiddleware>();
+//TODO (possible DI error)
+//app.UseMiddleware<HttpLoggingMiddleware>();
 
 app.Run();
