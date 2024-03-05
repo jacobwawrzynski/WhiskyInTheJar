@@ -17,13 +17,15 @@ namespace Infrastructure.Entities
         [Column(TypeName = "nvarchar(100)")]
         public Category Category { get; set; } = Category.Other;
 
-        [Required]
-        [Column(TypeName = "decimal(10, 2)")]
-        public double AveragePrice { get; set; }
+        public int? AvgPriceUSD { get; set; } = null;
 
         [Required]
         public string Country { get; set; }
 
-        public int? Age { get; set; }
+        [Required]
+        public string Taste { get; set; }
+
+        public int? Age { get; set; } = null;
+        public string? ImageUrl { get; set; } = null;
     }
 }

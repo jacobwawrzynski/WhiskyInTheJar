@@ -17,6 +17,8 @@ namespace Infrastructure.Enums
         SingleGrainScotchWhiskey,
         BlendedMaltScotchWhiskey,
         BlendedGrainScotchWhiskey,
-        Bourbon
+        Bourbon,
+        Tennessee,
+
     }
 }

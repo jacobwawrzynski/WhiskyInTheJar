@@ -15,6 +15,8 @@ namespace Infrastructure.Entities
         [Length(1, 250)]
         public string Description { get; set; }
 
+        public string Tags { get; set; } = string.Empty;
+
         public DateTime DateAdded { get; set; } = DateTime.Now;
     }
 }
