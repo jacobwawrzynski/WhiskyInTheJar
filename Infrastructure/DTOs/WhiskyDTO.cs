@@ -10,9 +10,9 @@ namespace Infrastructure.DTOs
         public string Tags { get; set; }
         public DateTime DateAdded { get; set; }
         public OverallRating Rating { get; set; }
-        public Category Category { get; set; }
         public int? AvgPriceUSD { get; set; }
         public string Country { get; set; }
+        public double AlcoholVol { get; set; }
         public int? Age { get; set; }
         public string? ImageUrl { get; set; }
     }

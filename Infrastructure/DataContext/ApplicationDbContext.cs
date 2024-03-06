@@ -35,12 +35,6 @@ namespace Infrastructure.DataContext
                     .HasConversion(x => x.ToString(),
                         x => (OverallRating)Enum.Parse(typeof(OverallRating), x)
                      );
-
-                entity.Property(e => e.Category)
-                    .HasMaxLength(100)
-                    .HasConversion(x => x.ToString(),
-                        x => (Category)Enum.Parse(typeof(Category), x)
-                     );
             });
         }
     }
