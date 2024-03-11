@@ -31,7 +31,6 @@ namespace Infrastructure.DataContext
             model.Entity<Whisky>(entity =>
             {
                 entity.Property(e => e.Rating)
-                    .HasMaxLength(9)
                     .HasConversion(x => x.ToString(),
                         x => (OverallRating)Enum.Parse(typeof(OverallRating), x)
                      );

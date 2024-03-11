@@ -8,9 +8,10 @@ namespace Infrastructure.Enums
 {
     public enum OverallRating
     {
-        Excellent = 3,
-        Good = 2,
-        Average = 1,
-        Bad = 0
+        Excellent = 5,
+        VeryGood = 4,
+        Good = 3,
+        Average = 2,
+        Bad = 1
     }
 }
