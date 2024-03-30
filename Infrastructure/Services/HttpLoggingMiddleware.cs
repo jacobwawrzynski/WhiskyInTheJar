@@ -2,6 +2,7 @@
 using Infrastructure.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using System.Text;
 
 namespace Infrastructure.Services
 {
@@ -12,8 +13,8 @@ namespace Infrastructure.Services
         private readonly ApplicationDbContext _dbContext;
 
         public HttpLoggingMiddleware(
-            RequestDelegate next, 
-            ILogger<HttpLoggingMiddleware> logger, 
+            RequestDelegate next,
+            ILogger<HttpLoggingMiddleware> logger,
             ApplicationDbContext dbContext)
         {
             _next = next;

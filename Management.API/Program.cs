@@ -3,13 +3,11 @@ using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.MappingProfiles;
 using Microsoft.Extensions.DependencyInjection;
+using Infrastructure.LoggerProvider;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -21,9 +19,11 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddTransient<IWhiskyService, WhiskyService>();
 builder.Services.AddAutoMapper(typeof(AutoMappingProfile));
 
+// TODO
+builder.Services.AddSingleton<ILoggerProvider, ResponseLoggerProvider>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
