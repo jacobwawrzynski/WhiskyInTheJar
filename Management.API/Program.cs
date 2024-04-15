@@ -11,16 +11,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlite("Data Source=../Data.db")
     );
+
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//        options.UseSqlite("Data Source=app/Data.db")
+//    );
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddTransient<IWhiskyService, WhiskyService>();
 builder.Services.AddAutoMapper(typeof(AutoMappingProfile));
 
 // TODO
-builder.Services.AddSingleton<ILoggerProvider, ResponseLoggerProvider>();
+//builder.Services.AddSingleton<ILoggerProvider, ResponseLoggerProvider>();
 
 var app = builder.Build();
 
@@ -35,8 +39,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-//TODO
-//app.UseMiddleware<HttpLoggingMiddleware>();
 
 app.Run();

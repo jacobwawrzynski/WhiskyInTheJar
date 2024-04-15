@@ -1,6 +1,7 @@
 ﻿using Infrastructure.Entities;
 using Infrastructure.Enums;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Infrastructure.DataContext
 {
@@ -21,7 +22,8 @@ namespace Infrastructure.DataContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite("Data Source=../Data.db");
+            optionsBuilder.UseSqlite("Data Source=../Data.db ");
+            //optionsBuilder.UseSqlite("Data Source=app/Data.db");
         }
 
         protected override void OnModelCreating(ModelBuilder model)
