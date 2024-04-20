@@ -1,9 +1,8 @@
 using Infrastructure.DataContext;
+using Infrastructure.MappingProfiles;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
-using Infrastructure.MappingProfiles;
-using Microsoft.Extensions.DependencyInjection;
-using Infrastructure.LoggerProvider;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
